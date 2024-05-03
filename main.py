@@ -140,6 +140,9 @@ def fetch_news(today: str):
     ]
     
     for name in api_names:
-        fetch_hot_api(today, name)
+        try:
+            fetch_hot_api(today, name)
+        except requests.exceptions.ConnectionError as e:
+            print(name, e)
 
 fetch_news(os.path.join(src_dir, str(YEAR), str(MONTH), str(DAY_OF_MONTH)))
