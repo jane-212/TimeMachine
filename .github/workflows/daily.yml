@@ -3,7 +3,6 @@ name: Time Machine
 on:
   schedule:
     - cron: "0 12 * * *"
-  workflow_dispatch:
 
 permissions:
   contents: write
@@ -39,6 +38,7 @@ jobs:
 
   build:
     name: Build And Deploy
+    needs: fetch
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main
