@@ -89,7 +89,10 @@ def fetch_hot_api(today: str, name: str):
         append_to_today_md(today, name)
         
     url = f"https://api-hot.efefee.cn/{name}?cache=true"
-    data = requests.get(url).json()["data"]
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Safari/605.1.15"
+    }
+    data = requests.get(url, headers=headers).json()["data"]
     
     items = []
     for item in data:
@@ -140,9 +143,6 @@ def fetch_news(today: str):
     ]
     
     for name in api_names:
-        try:
-            fetch_hot_api(today, name)
-        except requests.exceptions.ConnectionError as e:
-            print(name, e)
+        fetch_hot_api(today, name)
 
 fetch_news(os.path.join(src_dir, str(YEAR), str(MONTH), str(DAY_OF_MONTH)))
