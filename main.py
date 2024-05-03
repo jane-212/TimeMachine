@@ -1,5 +1,8 @@
 import time
 import os
+import requests
+from lxml import etree as ET
+import json
 
 NOW = time.localtime()
 YEAR = NOW.tm_year
@@ -28,48 +31,115 @@ def create_dir_not_exist(dir: str):
     return True
     
 src_dir = "src"
+summary_md = "SUMMARY.md"
+root_summary_md = os.path.join(src_dir, summary_md)
 
 path = os.path.join(src_dir, str(YEAR))
 is_first_year = create_dir_not_exist(path)
-year_md = os.path.join(path, "SUMMARY.md")
-year_rel = os.path.join(str(YEAR), "SUMMARY.md")
 
 path = os.path.join(path, str(MONTH))
 is_first_month = create_dir_not_exist(path)
-month_md = os.path.join(path, "SUMMARY.md")
-month_rel = os.path.join(str(MONTH), "SUMMARY.md")
 
-today_md = os.path.join(path, str(DAY_OF_MONTH) + ".md")
-today_exists = os.path.exists(today_md)
-summary_md = os.path.join(src_dir, "SUMMARY.md")
+path = os.path.join(path, str(DAY_OF_MONTH))
+is_first_day = create_dir_not_exist(path)
 
-def fetch_news() -> str:
-    news = ""
-    news += f"{map_weekday(DAY_OF_WEEK)}\n"
-    news += "## 你好\n"
-    
-    return news
+def line(msg: str = "") -> str:
+    return msg + "\n"
 
-news = fetch_news()
-with open(today_md, "w") as f:
-    f.write(news)
-
-relative_path = os.path.join(str(DAY_OF_MONTH) + ".md")
-with open(summary_md, "a") as f:
+with open(root_summary_md, "a") as f:
     if is_first_year:
-        f.write(f"- [{YEAR}年]({year_rel})\n")
+        f.write(line(f"- [{YEAR}年]({os.path.join(str(YEAR), summary_md)})"))
         
     if is_first_month:
-        with open(year_md, "a") as yf:
-            yf.write(f"- [{MONTH}月]({month_rel})\n")
+        f.write(line(f"    - [{MONTH}月]({os.path.join(str(YEAR), str(MONTH), summary_md)})"))
             
-        month_rel = os.path.join(str(YEAR), month_rel)
-        f.write(f"    - [{MONTH}月]({month_rel})\n")
+    if is_first_day:
+        f.write(line(f"        - [{DAY_OF_MONTH}日]({os.path.join(str(YEAR), str(MONTH), str(DAY_OF_MONTH), summary_md)})"))
         
-    if not today_exists:
-        with open(month_md, "a") as mf:
-            mf.write(f"- [{DAY_OF_MONTH}日]({relative_path})\n")
-            
-    if not today_exists:
-        day_rel = os.path.join(str(YEAR), str(MONTH), relative_path)
-        f.write(f"        - [{DAY_OF_MONTH}日]({day_rel})\n")
+with open(os.path.join(src_dir, str(YEAR), summary_md), "a") as f:
+    if is_first_month:
+        f.write(line(f"- [{MONTH}月]({os.path.join(str(MONTH), summary_md)})"))
+        
+with open(os.path.join(src_dir, str(YEAR), str(MONTH), summary_md), "a") as f:
+    if is_first_day:
+        f.write(line(f"- [{DAY_OF_MONTH}日]({os.path.join(str(DAY_OF_MONTH), summary_md)})"))
+
+with open(os.path.join(src_dir, str(YEAR), str(MONTH), str(DAY_OF_MONTH), summary_md), "a") as f:
+    if is_first_day:
+        f.write(line(f"#### {YEAR}-{MONTH}-{DAY_OF_MONTH}({map_weekday(DAY_OF_WEEK)})"))
+        f.write(line())
+
+# fetch news helper
+
+def append_to_root_md(name: str):
+    with open(os.path.join(root_summary_md), "a") as f:
+        demo_md = os.path.join(str(YEAR), str(MONTH), str(DAY_OF_MONTH), f"{name}.md")
+        f.write(line(f"            - [{name}]({demo_md})"))
+        
+def append_to_today_md(today: str, name: str):
+    with open(os.path.join(today, summary_md), "a") as f:
+        f.write(line(f"- [{name}]({name}.md)"))
+
+# start fetch news
+
+def fetch_hot_api(today: str, name: str):
+    md = os.path.join(today, f"{name}.md")
+    if not os.path.exists(md):
+        append_to_root_md(name)
+        append_to_today_md(today, name)
+        
+    url = f"https://api-hot.efefee.cn/{name}?cache=true"
+    data = requests.get(url).json()["data"]
+    
+    items = []
+    for item in data:
+        title = item["title"]
+        desc = item.get("desc")
+        if desc is None:
+            desc = "> no description"
+        author = item.get("author")
+        if author is None:
+            author = "no author"
+        url = item["url"]
+        lines = desc.splitlines()
+        new_lines = []
+        for single in lines:
+            single = "> " + single
+            new_lines.append(single)
+        desc = "\n".join(new_lines)
+        
+        new_item = ""
+        new_item += line(f"## [{title}]({url})")
+        new_item += line("")
+        new_item += line(f"author: {author}")
+        new_item += line("")
+        new_item += line(f"{desc}" if len(desc) > 0 else "> no description")
+        new_item += line("---")
+        new_item += line()
+        items.append(new_item)
+    
+    with open(md, "w") as f:
+        for item in items:
+            f.write(item)
+
+def fetch_news(today: str):
+    api_names = [
+        "bilibili",
+        "weibo",
+        "douyin",
+        "zhihu",
+        "36kr",
+        "baidu",
+        "sspai",
+        "ithome",
+        "thepaper",
+        "toutiao",
+        "tieba",
+        "qq-news",
+        "netease-news",
+    ]
+    
+    for name in api_names:
+        fetch_hot_api(today, name)
+
+fetch_news(os.path.join(src_dir, str(YEAR), str(MONTH), str(DAY_OF_MONTH)))
