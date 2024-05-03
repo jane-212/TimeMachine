@@ -90,6 +90,13 @@ def fetch_hot_api(today: str, name: str):
         
     url = f"https://api-hot.efefee.cn/{name}?cache=true"
     headers = {
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Language": "zh-CN,zh-Hans;q=0.9",
+        "Connection": "keep-alive",
+        "Host": "api-hot.efefee.cn",
+        "Origin": "https://hot.imsyy.top",
+        "Referer": "https://hot.imsyy.top/",
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Safari/605.1.15"
     }
     data = requests.get(url, headers=headers).json()["data"]
