@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>toutiao - Time Machine</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../../2024/SUMMARY.html"><strong aria-hidden="true">1.</strong> 2024年</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../2024/5/SUMMARY.html"><strong aria-hidden="true">1.1.</strong> 5月</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../2024/5/4/SUMMARY.html"><strong aria-hidden="true">1.1.1.</strong> 4日</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../2024/5/4/toutiao.html" class="active"><strong aria-hidden="true">1.1.1.1.</strong> toutiao</a></li><li class="chapter-item expanded "><a href="../../../2024/5/4/baiduhot.html"><strong aria-hidden="true">1.1.1.2.</strong> baiduhot</a></li><li class="chapter-item expanded "><a href="../../../2024/5/4/douyinhot.html"><strong aria-hidden="true">1.1.1.3.</strong> douyinhot</a></li><li class="chapter-item expanded "><a href="../../../2024/5/4/weibohot.html"><strong aria-hidden="true">1.1.1.4.</strong> weibohot</a></li><li class="chapter-item expanded "><a href="../../../2024/5/4/zhihuhot.html"><strong aria-hidden="true">1.1.1.5.</strong> zhihuhot</a></li><li class="chapter-item expanded "><a href="../../../2024/5/4/bilihot.html"><strong aria-hidden="true">1.1.1.6.</strong> bilihot</a></li><li class="chapter-item expanded "><a href="../../../2024/5/4/toutiaohot.html"><strong aria-hidden="true">1.1.1.7.</strong> toutiaohot</a></li></ol></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Time Machine</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="离谱车祸甬莞高速上人牛相撞车翻牛亡这该找谁负责"><a class="header" href="#离谱车祸甬莞高速上人牛相撞车翻牛亡这该找谁负责"><a href="https://toutiao.com/group/7364888796036514338/">离谱车祸！甬莞高速上人牛相撞，车翻牛亡，这该找谁负责？</a></a></h2>
+<p>任任看世界</p>
+<p>2024-05-04 06:18:53</p>
+<hr />
+<h2 id="太缺德了女子不听劝阻摘牡丹花白马寺回应-网友一万一朵"><a class="header" href="#太缺德了女子不听劝阻摘牡丹花白马寺回应-网友一万一朵"><a href="https://toutiao.com/group/7365043219572261417/">太缺德了！女子不听劝阻摘牡丹花，白马寺回应 网友：一万一朵！</a></a></h2>
+<p>阅人阅事</p>
+<p>2024-05-04 15:47:45</p>
+<hr />
+<h2 id="后续胖猫女友谭竹发声道歉否认花他51万真实颜值曝光"><a class="header" href="#后续胖猫女友谭竹发声道歉否认花他51万真实颜值曝光"><a href="https://toutiao.com/group/7364977765172560447/">后续！“胖猫”女友谭竹发声道歉，否认花他51万，真实颜值曝光！</a></a></h2>
+<p>小小鲨娱</p>
+<p>2024-05-04 11:43:27</p>
+<hr />
+<h2 id="胖猫自杀后续姐姐直播称决不和解谭竹闺蜜团被扒黑料曝光"><a class="header" href="#胖猫自杀后续姐姐直播称决不和解谭竹闺蜜团被扒黑料曝光"><a href="https://toutiao.com/group/7365017647295021607/">胖猫自杀后续：姐姐直播称决不和解，谭竹闺蜜团被扒，黑料曝光</a></a></h2>
+<p>老陈嘚吧嘚</p>
+<p>2024-05-04 15:07:58</p>
+<hr />
+<h2 id="网传张韶涵商演拉肚子事件后续官方发声回应评论区炸锅了"><a class="header" href="#网传张韶涵商演拉肚子事件后续官方发声回应评论区炸锅了"><a href="https://toutiao.com/group/7364972369741382180/">网传张韶涵商演"拉肚子"事件后续：官方发声回应，评论区炸锅了</a></a></h2>
+<p>快乐雕m</p>
+<p>2024-05-04 11:56:41</p>
+<hr />
+<h2 id="越闹越大女方接受采访竟不知道胖猫房子的门牌号为胖猫不值"><a class="header" href="#越闹越大女方接受采访竟不知道胖猫房子的门牌号为胖猫不值"><a href="https://toutiao.com/group/7365035171218948643/">越闹越大！女方接受采访：竟不知道胖猫房子的门牌号，为胖猫不值</a></a></h2>
+<p>娱生只为你</p>
+<p>2024-05-04 15:24:32</p>
+<hr />
+<h2 id="54岁林依轮这次赌对了-凌晨2点化妆游西湖-网友被他妻子惊艳到了"><a class="header" href="#54岁林依轮这次赌对了-凌晨2点化妆游西湖-网友被他妻子惊艳到了"><a href="https://toutiao.com/group/7365016325019976242/">54岁林依轮这次赌对了 凌晨2点化妆游西湖 网友被他妻子惊艳到了</a></a></h2>
+<p>寒子看剧</p>
+<p>2024-05-04 13:52:54</p>
+<hr />
+<h2 id="太炸裂胖猫死后被某些网友疯狂辱骂女友谭竹私生活被曝光"><a class="header" href="#太炸裂胖猫死后被某些网友疯狂辱骂女友谭竹私生活被曝光"><a href="https://toutiao.com/group/7365047526427230732/">太炸裂！胖猫死后被某些网友疯狂辱骂，女友谭竹私生活被曝光</a></a></h2>
+<p>大董</p>
+<p>2024-05-04 15:51:57</p>
+<hr />
+<h2 id="三观炸裂亳州王婆说媒"><a class="header" href="#三观炸裂亳州王婆说媒"><a href="https://toutiao.com/group/7365059639173497385/">三观炸裂！亳州“王婆说媒”</a></a></h2>
+<p>潇洒饭团I</p>
+<p>2024-05-04 16:33:09</p>
+<hr />
+<h2 id="笑疯了江苏泰州动物园用狗冒充熊猫网友怎么狗里狗气的"><a class="header" href="#笑疯了江苏泰州动物园用狗冒充熊猫网友怎么狗里狗气的"><a href="https://toutiao.com/group/7364953497382486528/">笑疯了！江苏泰州动物园用狗冒充熊猫，网友：怎么狗里狗气的</a></a></h2>
+<p>小崔说事</p>
+<p>2024-05-04 10:17:15</p>
+<hr />
+<h2 id="花了2小时看完了胖猫事件的来龙去脉真的太意外太气人"><a class="header" href="#花了2小时看完了胖猫事件的来龙去脉真的太意外太气人"><a href="https://toutiao.com/group/7364969278220681755/">花了2小时看完了“胖猫事件”的来龙去脉，真的太意外太气人！</a></a></h2>
+<p>德说天下</p>
+<p>2024-05-04 11:09:31</p>
+<hr />
+<h2 id="假期和父母旅游有多崩溃网友老一辈人没苦硬吃真扫兴"><a class="header" href="#假期和父母旅游有多崩溃网友老一辈人没苦硬吃真扫兴"><a href="https://toutiao.com/group/7364756136031748608/">假期和父母旅游有多崩溃？网友：老一辈人没苦硬吃，真扫兴！</a></a></h2>
+<p>看动画长不大</p>
+<p>2024-05-03 21:28:39</p>
+<hr />
+<h2 id="胖猫姐姐直播答谢网友全程关闭礼物打赏曝更多细节让人心疼"><a class="header" href="#胖猫姐姐直播答谢网友全程关闭礼物打赏曝更多细节让人心疼"><a href="https://toutiao.com/group/7365017456274424356/">胖猫姐姐直播答谢网友，全程关闭礼物打赏，曝更多细节让人心疼！</a></a></h2>
+<p>楠辰娱</p>
+<p>2024-05-04 13:53:55</p>
+<hr />
+<h2 id="今天你接福了吗龙年龙月龙时到了祥瑞之兆显神通"><a class="header" href="#今天你接福了吗龙年龙月龙时到了祥瑞之兆显神通"><a href="https://toutiao.com/group/7364942559812190756/">今天你接福了吗？龙年龙月龙时到了，祥瑞之兆显神通！</a></a></h2>
+<p>优雅晚风bR</p>
+<p>2024-05-04 09:06:23</p>
+<hr />
+<h2 id="洗白胖猫跳江事件新后续女主发长文回应一句话却露馅"><a class="header" href="#洗白胖猫跳江事件新后续女主发长文回应一句话却露馅"><a href="https://toutiao.com/group/7365025425145250323/">洗白？"胖猫"跳江事件新后续：女主发长文回应，一句话却"露馅"？</a></a></h2>
+<p>快乐雕m</p>
+<p>2024-05-04 16:06:34</p>
+<hr />
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../2024/5/4/SUMMARY.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../2024/5/4/baiduhot.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../2024/5/4/SUMMARY.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../2024/5/4/baiduhot.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr.min.js"></script>
+        <script src="../../../mark.min.js"></script>
+        <script src="../../../searcher.js"></script>
+
+        <script src="../../../clipboard.min.js"></script>
+        <script src="../../../highlight.js"></script>
+        <script src="../../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

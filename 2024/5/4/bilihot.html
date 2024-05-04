@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>bilihot - Time Machine</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../../2024/SUMMARY.html"><strong aria-hidden="true">1.</strong> 2024年</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../2024/5/SUMMARY.html"><strong aria-hidden="true">1.1.</strong> 5月</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../2024/5/4/SUMMARY.html"><strong aria-hidden="true">1.1.1.</strong> 4日</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../2024/5/4/toutiao.html"><strong aria-hidden="true">1.1.1.1.</strong> toutiao</a></li><li class="chapter-item expanded "><a href="../../../2024/5/4/baiduhot.html"><strong aria-hidden="true">1.1.1.2.</strong> baiduhot</a></li><li class="chapter-item expanded "><a href="../../../2024/5/4/douyinhot.html"><strong aria-hidden="true">1.1.1.3.</strong> douyinhot</a></li><li class="chapter-item expanded "><a href="../../../2024/5/4/weibohot.html"><strong aria-hidden="true">1.1.1.4.</strong> weibohot</a></li><li class="chapter-item expanded "><a href="../../../2024/5/4/zhihuhot.html"><strong aria-hidden="true">1.1.1.5.</strong> zhihuhot</a></li><li class="chapter-item expanded "><a href="../../../2024/5/4/bilihot.html" class="active"><strong aria-hidden="true">1.1.1.6.</strong> bilihot</a></li><li class="chapter-item expanded "><a href="../../../2024/5/4/toutiaohot.html"><strong aria-hidden="true">1.1.1.7.</strong> toutiaohot</a></li></ol></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Time Machine</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="拜登给杨紫琼颁发奖章"><a class="header" href="#拜登给杨紫琼颁发奖章"><a href="https://search.bilibili.com/all?vt=36849326&amp;keyword=%E6%8B%9C%E7%99%BB%E7%BB%99%E6%9D%A8%E7%B4%AB%E7%90%BC%E9%A2%81%E5%8F%91%E5%A5%96%E7%AB%A0&amp;order=click">拜登给杨紫琼颁发奖章</a></a></h2>
+<p>2024-05-04 18:24:20</p>
+<hr />
+<h2 id="gam-lll"><a class="header" href="#gam-lll"><a href="https://search.bilibili.com/all?vt=36849326&amp;keyword=GAM+LLL&amp;order=click">GAM LLL</a></a></h2>
+<p>2024-05-04 18:24:20</p>
+<hr />
+<h2 id="最帅的男人养最漂亮的崽"><a class="header" href="#最帅的男人养最漂亮的崽"><a href="https://search.bilibili.com/all?vt=36849326&amp;keyword=%E6%9C%80%E5%B8%85%E7%9A%84%E7%94%B7%E4%BA%BA%E5%85%BB%E6%9C%80%E6%BC%82%E4%BA%AE%E7%9A%84%E5%B4%BD&amp;order=click">最帅的男人养最漂亮的崽</a></a></h2>
+<p>2024-05-04 18:24:20</p>
+<hr />
+<h2 id="香飘飘日本超市讽核污水"><a class="header" href="#香飘飘日本超市讽核污水"><a href="https://search.bilibili.com/all?vt=36849326&amp;keyword=%E9%A6%99%E9%A3%98%E9%A3%98%E6%97%A5%E6%9C%AC%E8%B6%85%E5%B8%82%E8%AE%BD%E6%A0%B8%E6%B1%A1%E6%B0%B4&amp;order=click">香飘飘日本超市讽核污水</a></a></h2>
+<p>2024-05-04 18:24:20</p>
+<hr />
+<h2 id="up在漫展被二次元背刺"><a class="header" href="#up在漫展被二次元背刺"><a href="https://search.bilibili.com/all?vt=36849326&amp;keyword=UP%E5%9C%A8%E6%BC%AB%E5%B1%95%E8%A2%AB%E4%BA%8C%E6%AC%A1%E5%85%83%E8%83%8C%E5%88%BA&amp;order=click">UP在漫展被二次元背刺</a></a></h2>
+<p>2024-05-04 18:24:20</p>
+<hr />
+<h2 id="blg青训选手招募"><a class="header" href="#blg青训选手招募"><a href="https://search.bilibili.com/all?vt=36849326&amp;keyword=BLG%E9%9D%92%E8%AE%AD%E9%80%89%E6%89%8B%E6%8B%9B%E5%8B%9F&amp;order=click">BLG青训选手招募</a></a></h2>
+<p>2024-05-04 18:24:20</p>
+<hr />
+<h2 id="小孩打碎116万瓷瓶被免赔"><a class="header" href="#小孩打碎116万瓷瓶被免赔"><a href="https://search.bilibili.com/all?vt=36849326&amp;keyword=%E5%B0%8F%E5%AD%A9%E6%89%93%E7%A2%8E11.6%E4%B8%87%E7%93%B7%E7%93%B6%E8%A2%AB%E5%85%8D%E8%B5%94&amp;order=click">小孩打碎11.6万瓷瓶被免赔</a></a></h2>
+<p>2024-05-04 18:24:20</p>
+<hr />
+<h2 id="新四军和八路军的区别"><a class="header" href="#新四军和八路军的区别"><a href="https://search.bilibili.com/all?vt=36849326&amp;keyword=%E6%96%B0%E5%9B%9B%E5%86%9B%E5%92%8C%E5%85%AB%E8%B7%AF%E5%86%9B%E7%9A%84%E5%8C%BA%E5%88%AB&amp;order=click">新四军和八路军的区别</a></a></h2>
+<p>2024-05-04 18:24:20</p>
+<hr />
+<h2 id="中国唯一没有的地貌"><a class="header" href="#中国唯一没有的地貌"><a href="https://search.bilibili.com/all?vt=36849326&amp;keyword=%E4%B8%AD%E5%9B%BD%E5%94%AF%E4%B8%80%E6%B2%A1%E6%9C%89%E7%9A%84%E5%9C%B0%E8%B2%8C&amp;order=click">中国唯一没有的地貌</a></a></h2>
+<p>2024-05-04 18:24:20</p>
+<hr />
+<h2 id="瓶子君评3a动画"><a class="header" href="#瓶子君评3a动画"><a href="https://search.bilibili.com/all?vt=36849326&amp;keyword=%E7%93%B6%E5%AD%90%E5%90%9B%E8%AF%843A%E5%8A%A8%E7%94%BB&amp;order=click">瓶子君评3A动画</a></a></h2>
+<p>2024-05-04 18:24:20</p>
+<hr />
+<h2 id="广东4条鳄鱼逃出"><a class="header" href="#广东4条鳄鱼逃出"><a href="https://search.bilibili.com/all?vt=36849326&amp;keyword=%E5%B9%BF%E4%B8%9C4%E6%9D%A1%E9%B3%84%E9%B1%BC%E9%80%83%E5%87%BA&amp;order=click">广东4条鳄鱼逃出</a></a></h2>
+<p>2024-05-04 18:24:20</p>
+<hr />
+<h2 id="psg-est"><a class="header" href="#psg-est"><a href="https://search.bilibili.com/all?vt=36849326&amp;keyword=PSG+EST&amp;order=click">PSG EST</a></a></h2>
+<p>2024-05-04 18:24:20</p>
+<hr />
+<h2 id="游客惊叹到下巴脱臼"><a class="header" href="#游客惊叹到下巴脱臼"><a href="https://search.bilibili.com/all?vt=36849326&amp;keyword=%E6%B8%B8%E5%AE%A2%E6%83%8A%E5%8F%B9%E5%88%B0%E4%B8%8B%E5%B7%B4%E8%84%B1%E8%87%BC&amp;order=click">游客惊叹到下巴脱臼</a></a></h2>
+<p>2024-05-04 18:24:20</p>
+<hr />
+<h2 id="阿水回应第二把不ban妖姬"><a class="header" href="#阿水回应第二把不ban妖姬"><a href="https://search.bilibili.com/all?vt=36849326&amp;keyword=%E9%98%BF%E6%B0%B4%E5%9B%9E%E5%BA%94%E7%AC%AC%E4%BA%8C%E6%8A%8A%E4%B8%8Dban%E5%A6%96%E5%A7%AC&amp;order=click">阿水回应第二把不ban妖姬</a></a></h2>
+<p>2024-05-04 18:24:20</p>
+<hr />
+<h2 id="央视五四青年节微电影"><a class="header" href="#央视五四青年节微电影"><a href="https://search.bilibili.com/all?vt=36849326&amp;keyword=%E5%A4%AE%E8%A7%86%E4%BA%94%E5%9B%9B%E9%9D%92%E5%B9%B4%E8%8A%82%E5%BE%AE%E7%94%B5%E5%BD%B1&amp;order=click">央视五四青年节微电影</a></a></h2>
+<p>2024-05-04 18:24:20</p>
+<hr />
+<h2 id="游戏厂拍战争片能硬核吗"><a class="header" href="#游戏厂拍战争片能硬核吗"><a href="https://search.bilibili.com/all?vt=36849326&amp;keyword=%E6%B8%B8%E6%88%8F%E5%8E%82%E6%8B%8D%E6%88%98%E4%BA%89%E7%89%87%E8%83%BD%E7%A1%AC%E6%A0%B8%E5%90%97&amp;order=click">游戏厂拍战争片能硬核吗</a></a></h2>
+<p>2024-05-04 18:24:20</p>
+<hr />
+<h2 id="731部队再添新罪证"><a class="header" href="#731部队再添新罪证"><a href="https://search.bilibili.com/all?vt=36849326&amp;keyword=731%E9%83%A8%E9%98%9F%E5%86%8D%E6%B7%BB%E6%96%B0%E7%BD%AA%E8%AF%81&amp;order=click">731部队再添新罪证</a></a></h2>
+<p>2024-05-04 18:24:20</p>
+<hr />
+<h2 id="瑞克和莫蒂日漫版新片段"><a class="header" href="#瑞克和莫蒂日漫版新片段"><a href="https://search.bilibili.com/all?vt=36849326&amp;keyword=%E7%91%9E%E5%85%8B%E5%92%8C%E8%8E%AB%E8%92%82%E6%97%A5%E6%BC%AB%E7%89%88%E6%96%B0%E7%89%87%E6%AE%B5&amp;order=click">瑞克和莫蒂日漫版新片段</a></a></h2>
+<p>2024-05-04 18:24:20</p>
+<hr />
+<h2 id="guma来成都没吃过火锅"><a class="header" href="#guma来成都没吃过火锅"><a href="https://search.bilibili.com/all?vt=36849326&amp;keyword=guma%E6%9D%A5%E6%88%90%E9%83%BD%E6%B2%A1%E5%90%83%E8%BF%87%E7%81%AB%E9%94%85&amp;order=click">guma来成都没吃过火锅</a></a></h2>
+<p>2024-05-04 18:24:20</p>
+<hr />
+<h2 id="独行侠4-2淘汰快船"><a class="header" href="#独行侠4-2淘汰快船"><a href="https://search.bilibili.com/all?vt=36849326&amp;keyword=%E7%8B%AC%E8%A1%8C%E4%BE%A04-2%E6%B7%98%E6%B1%B0%E5%BF%AB%E8%88%B9&amp;order=click">独行侠4-2淘汰快船</a></a></h2>
+<p>2024-05-04 18:24:20</p>
+<hr />
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../2024/5/4/zhihuhot.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../2024/5/4/toutiaohot.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../2024/5/4/zhihuhot.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../2024/5/4/toutiaohot.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr.min.js"></script>
+        <script src="../../../mark.min.js"></script>
+        <script src="../../../searcher.js"></script>
+
+        <script src="../../../clipboard.min.js"></script>
+        <script src="../../../highlight.js"></script>
+        <script src="../../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
