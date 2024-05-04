@@ -82,74 +82,85 @@ def append_to_today_md(today: str, name: str):
 
 # start fetch news
 
-def fetch_hot_api(today: str, name: str):
+def fetch_toutiao(today: str):
+    name = "toutiao"
+    md = os.path.join(today, f"{name}.md")
+    if not os.path.exists(md):
+        append_to_root_md(name)
+        append_to_today_md(today, name)
+    
+    url = "https://www.toutiao.com/api/pc/list/feed?channel_id=3189398996&min_behot_time=0&offset=0&refresh_count=1&category=pc_profile_channel&client_extra_params=%7B%22short_video_item%22%3A%22filter%22%7D&aid=24&app_name=toutiao_web"
+    data = requests.get(url).json()["data"]
+    
+    items = []
+    for item in data:
+        title = item["title"]
+        url = item["url"]
+        author = item["source"]
+        news_time = item["publish_time"]
+        news_time = int(news_time)
+        news_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(news_time))
+        
+        news = ""
+        news += line(f"## [{title}]({url})")
+        news += line()
+        news += line(f"{author}")
+        news += line()
+        news += line(f"{news_time}")
+        news += line()
+        news += line("---")
+        
+        items.append(news)
+        
+    with open(md, "w") as f:
+        for news in items:
+            f.write(news)
+            
+def fetch_ten_api(today, name):
     md = os.path.join(today, f"{name}.md")
     if not os.path.exists(md):
         append_to_root_md(name)
         append_to_today_md(today, name)
         
-    url = f"https://api-hot.efefee.cn/{name}?cache=true"
-    headers = {
-        "Accept": "*/*",
-        "Accept-Encoding": "gzip, deflate, br",
-        "Accept-Language": "zh-CN,zh-Hans;q=0.9",
-        "Connection": "keep-alive",
-        "Host": "api-hot.efefee.cn",
-        "Origin": "https://hot.imsyy.top",
-        "Referer": "https://hot.imsyy.top/",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Safari/605.1.15"
-    }
-    data = requests.get(url, headers=headers).json()["data"]
+    url = f"https://tenapi.cn/v2/{name}"
+    data = requests.get(url).json()["data"]
     
     items = []
     for item in data:
-        title = item["title"]
-        desc = item.get("desc")
-        if desc is None:
-            desc = "> no description"
-        author = item.get("author")
-        if author is None:
-            author = "no author"
+        title = item["name"]
         url = item["url"]
-        lines = desc.splitlines()
-        new_lines = []
-        for single in lines:
-            single = "> " + single
-            new_lines.append(single)
-        desc = "\n".join(new_lines)
+        news_time = time.localtime()
+        news_time = time.strftime("%Y-%m-%d %H:%M:%S", news_time)
         
-        new_item = ""
-        new_item += line(f"## [{title}]({url})")
-        new_item += line("")
-        new_item += line(f"author: {author}")
-        new_item += line("")
-        new_item += line(f"{desc}" if len(desc) > 0 else "> no description")
-        new_item += line("---")
-        new_item += line()
-        items.append(new_item)
-    
+        news = ""
+        news += line(f"## [{title}]({url})")
+        news += line()
+        news += line(f"{news_time}")
+        news += line()
+        news += line("---")
+        
+        items.append(news)
+        
     with open(md, "w") as f:
-        for item in items:
-            f.write(item)
+        for news in items:
+            f.write(news)
 
 def fetch_news(today: str):
-    api_names = [
-        "bilibili",
-        "weibo",
-        "douyin",
-        "zhihu",
-        "36kr",
-        "baidu",
-        "sspai",
-        "ithome",
-        "thepaper",
-        "toutiao",
-        "tieba",
-        "qq-news",
-        "netease-news",
-    ]
+    print("fetch toutiao")
+    fetch_toutiao(today)
+    time.sleep(3)
     
-    for name in api_names:
-        fetch_hot_api(today, name)
+    tens = [
+        "baiduhot",
+        "douyinhot",
+        "weibohot",
+        "zhihuhot",
+        "bilihot",
+        "toutiaohot",
+    ]
+    for ten in tens:
+        print(f"fetch {ten}")
+        fetch_ten_api(today, ten)
+        time.sleep(3)
 
 fetch_news(os.path.join(src_dir, str(YEAR), str(MONTH), str(DAY_OF_MONTH)))
