@@ -37,14 +37,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
 
-  build:
-    name: Build And Deploy
-    needs: fetch
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout main
-        uses: actions/checkout@v4
-
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v1
         with:
