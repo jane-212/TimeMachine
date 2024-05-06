@@ -3,7 +3,7 @@ name: Time Machine
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 12 * * *"
+    - cron: "0 9 * * *"
 
 permissions:
   contents: write
