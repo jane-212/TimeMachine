@@ -1,7 +1,6 @@
 import time
 import os
 import requests
-from lxml import etree as ET
 import json
 
 NOW = time.localtime()
