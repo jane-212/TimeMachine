@@ -82,40 +82,6 @@ def append_to_today_md(today: str, name: str):
 
 # start fetch news
 
-def fetch_toutiao(today: str):
-    name = "toutiao"
-    md = os.path.join(today, f"{name}.md")
-    if not os.path.exists(md):
-        append_to_root_md(name)
-        append_to_today_md(today, name)
-    
-    url = "https://www.toutiao.com/api/pc/list/feed?channel_id=3189398996&min_behot_time=0&offset=0&refresh_count=1&category=pc_profile_channel&client_extra_params=%7B%22short_video_item%22%3A%22filter%22%7D&aid=24&app_name=toutiao_web"
-    data = requests.get(url).json()["data"]
-    
-    items = []
-    for item in data:
-        title = item["title"]
-        url = item["url"]
-        author = item["source"]
-        news_time = item["publish_time"]
-        news_time = int(news_time)
-        news_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(news_time))
-        
-        news = ""
-        news += line(f"## [{title}]({url})")
-        news += line()
-        news += line(f"{author}")
-        news += line()
-        news += line(f"{news_time}")
-        news += line()
-        news += line("---")
-        
-        items.append(news)
-        
-    with open(md, "w") as f:
-        for news in items:
-            f.write(news)
-            
 def fetch_ten_api(today, name):
     md = os.path.join(today, f"{name}.md")
     if not os.path.exists(md):
@@ -146,10 +112,6 @@ def fetch_ten_api(today, name):
             f.write(news)
 
 def fetch_news(today: str):
-    print("fetch toutiao")
-    fetch_toutiao(today)
-    time.sleep(3)
-    
     tens = [
         "baiduhot",
         "douyinhot",
@@ -158,6 +120,7 @@ def fetch_news(today: str):
         "bilihot",
         "toutiaohot",
     ]
+    
     for ten in tens:
         print(f"fetch {ten}")
         fetch_ten_api(today, ten)
