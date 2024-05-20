@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>toutiaohot - Time Machine</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../../2024/SUMMARY.html"><strong aria-hidden="true">1.</strong> 2024年</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../2024/5/SUMMARY.html"><strong aria-hidden="true">1.1.</strong> 5月</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../2024/5/4/SUMMARY.html"><strong aria-hidden="true">1.1.1.</strong> 4日</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../2024/5/4/toutiao.html"><strong aria-hidden="true">1.1.1.1.</strong> toutiao</a></li><li class="chapter-item "><a href="../../../2024/5/4/baiduhot.html"><strong aria-hidden="true">1.1.1.2.</strong> baiduhot</a></li><li class="chapter-item "><a href="../../../2024/5/4/douyinhot.html"><strong aria-hidden="true">1.1.1.3.</strong> douyinhot</a></li><li class="chapter-item "><a href="../../../2024/5/4/weibohot.html"><strong aria-hidden="true">1.1.1.4.</strong> weibohot</a></li><li class="chapter-item "><a href="../../../2024/5/4/zhihuhot.html"><strong aria-hidden="true">1.1.1.5.</strong> zhihuhot</a></li><li class="chapter-item "><a href="../../../2024/5/4/bilihot.html"><strong aria-hidden="true">1.1.1.6.</strong> bilihot</a></li><li class="chapter-item "><a href="../../../2024/5/4/toutiaohot.html"><strong aria-hidden="true">1.1.1.7.</strong> toutiaohot</a></li></ol></li><li class="chapter-item "><a href="../../../2024/5/5/SUMMARY.html"><strong aria-hidden="true">1.1.2.</strong> 5日</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../2024/5/5/toutiao.html"><strong aria-hidden="true">1.1.2.1.</strong> toutiao</a></li><li class="chapter-item "><a href="../../../2024/5/5/baiduhot.html"><strong aria-hidden="true">1.1.2.2.</strong> baiduhot</a></li><li class="chapter-item "><a href="../../../2024/5/5/douyinhot.html"><strong aria-hidden="true">1.1.2.3.</strong> douyinhot</a></li><li class="chapter-item "><a href="../../../2024/5/5/weibohot.html"><strong aria-hidden="true">1.1.2.4.</strong> weibohot</a></li><li class="chapter-item "><a href="../../../2024/5/5/zhihuhot.html"><strong aria-hidden="true">1.1.2.5.</strong> zhihuhot</a></li><li class="chapter-item "><a href="../../../2024/5/5/bilihot.html"><strong aria-hidden="true">1.1.2.6.</strong> bilihot</a></li><li class="chapter-item "><a href="../../../2024/5/5/toutiaohot.html"><strong aria-hidden="true">1.1.2.7.</strong> toutiaohot</a></li></ol></li><li class="chapter-item "><a href="../../../2024/5/6/SUMMARY.html"><strong aria-hidden="true">1.1.3.</strong> 6日</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../2024/5/6/toutiao.html"><strong aria-hidden="true">1.1.3.1.</strong> toutiao</a></li><li class="chapter-item "><a href="../../../2024/5/6/baiduhot.html"><strong aria-hidden="true">1.1.3.2.</strong> baiduhot</a></li><li class="chapter-item "><a href="../../../2024/5/6/douyinhot.html"><strong aria-hidden="true">1.1.3.3.</strong> douyinhot</a></li><li class="chapter-item "><a href="../../../2024/5/6/weibohot.html"><strong aria-hidden="true">1.1.3.4.</strong> weibohot</a></li><li class="chapter-item "><a href="../../../2024/5/6/zhihuhot.html"><strong aria-hidden="true">1.1.3.5.</strong> zhihuhot</a></li><li class="chapter-item "><a href="../../../2024/5/6/bilihot.html"><strong aria-hidden="true">1.1.3.6.</strong> bilihot</a></li><li class="chapter-item "><a href="../../../2024/5/6/toutiaohot.html"><strong aria-hidden="true">1.1.3.7.</strong> toutiaohot</a></li></ol></li><li class="chapter-item "><a href="../../../2024/5/7/SUMMARY.html"><strong aria-hidden="true">1.1.4.</strong> 7日</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../2024/5/7/toutiao.html"><strong aria-hidden="true">1.1.4.1.</strong> toutiao</a></li><li class="chapter-item "><a href="../../../2024/5/7/baiduhot.html"><strong aria-hidden="true">1.1.4.2.</strong> baiduhot</a></li><li class="chapter-item "><a href="../../../2024/5/7/douyinhot.html"><strong aria-hidden="true">1.1.4.3.</strong> douyinhot</a></li><li class="chapter-item "><a href="../../../2024/5/7/weibohot.html"><strong aria-hidden="true">1.1.4.4.</strong> weibohot</a></li><li class="chapter-item "><a href="../../../2024/5/7/zhihuhot.html"><strong aria-hidden="true">1.1.4.5.</strong> zhihuhot</a></li><li class="chapter-item "><a href="../../../2024/5/7/bilihot.html"><strong aria-hidden="true">1.1.4.6.</strong> bilihot</a></li><li class="chapter-item "><a href="../../../2024/5/7/toutiaohot.html"><strong aria-hidden="true">1.1.4.7.</strong> toutiaohot</a></li></ol></li><li class="chapter-item "><a href="../../../2024/5/8/SUMMARY.html"><strong aria-hidden="true">1.1.5.</strong> 8日</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../2024/5/8/baiduhot.html"><strong aria-hidden="true">1.1.5.1.</strong> baiduhot</a></li><li class="chapter-item "><a href="../../../2024/5/8/douyinhot.html"><strong aria-hidden="true">1.1.5.2.</strong> douyinhot</a></li><li class="chapter-item "><a href="../../../2024/5/8/weibohot.html"><strong aria-hidden="true">1.1.5.3.</strong> weibohot</a></li><li class="chapter-item "><a href="../../../2024/5/8/zhihuhot.html"><strong aria-hidden="true">1.1.5.4.</strong> zhihuhot</a></li><li class="chapter-item "><a href="../../../2024/5/8/bilihot.html"><strong aria-hidden="true">1.1.5.5.</strong> bilihot</a></li><li class="chapter-item "><a href="../../../2024/5/8/toutiaohot.html"><strong aria-hidden="true">1.1.5.6.</strong> toutiaohot</a></li></ol></li><li class="chapter-item "><a href="../../../2024/5/9/SUMMARY.html"><strong aria-hidden="true">1.1.6.</strong> 9日</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../2024/5/9/baiduhot.html"><strong aria-hidden="true">1.1.6.1.</strong> baiduhot</a></li><li class="chapter-item "><a href="../../../2024/5/9/douyinhot.html"><strong aria-hidden="true">1.1.6.2.</strong> douyinhot</a></li><li class="chapter-item "><a href="../../../2024/5/9/weibohot.html"><strong aria-hidden="true">1.1.6.3.</strong> weibohot</a></li><li class="chapter-item "><a href="../../../2024/5/9/zhihuhot.html"><strong aria-hidden="true">1.1.6.4.</strong> zhihuhot</a></li><li class="chapter-item "><a href="../../../2024/5/9/bilihot.html"><strong aria-hidden="true">1.1.6.5.</strong> bilihot</a></li><li class="chapter-item "><a href="../../../2024/5/9/toutiaohot.html"><strong aria-hidden="true">1.1.6.6.</strong> toutiaohot</a></li></ol></li><li class="chapter-item "><a href="../../../2024/5/10/SUMMARY.html"><strong aria-hidden="true">1.1.7.</strong> 10日</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../2024/5/10/baiduhot.html"><strong aria-hidden="true">1.1.7.1.</strong> baiduhot</a></li><li class="chapter-item "><a href="../../../2024/5/10/douyinhot.html"><strong aria-hidden="true">1.1.7.2.</strong> douyinhot</a></li><li class="chapter-item "><a href="../../../2024/5/10/weibohot.html"><strong aria-hidden="true">1.1.7.3.</strong> weibohot</a></li><li class="chapter-item "><a href="../../../2024/5/10/zhihuhot.html"><strong aria-hidden="true">1.1.7.4.</strong> zhihuhot</a></li><li class="chapter-item "><a href="../../../2024/5/10/bilihot.html"><strong aria-hidden="true">1.1.7.5.</strong> bilihot</a></li><li class="chapter-item "><a href="../../../2024/5/10/toutiaohot.html"><strong aria-hidden="true">1.1.7.6.</strong> toutiaohot</a></li></ol></li><li class="chapter-item "><a href="../../../2024/5/12/SUMMARY.html"><strong aria-hidden="true">1.1.8.</strong> 12日</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../2024/5/12/baiduhot.html"><strong aria-hidden="true">1.1.8.1.</strong> baiduhot</a></li><li class="chapter-item "><a href="../../../2024/5/12/douyinhot.html"><strong aria-hidden="true">1.1.8.2.</strong> douyinhot</a></li><li class="chapter-item "><a href="../../../2024/5/12/weibohot.html"><strong aria-hidden="true">1.1.8.3.</strong> weibohot</a></li><li class="chapter-item "><a href="../../../2024/5/12/zhihuhot.html"><strong aria-hidden="true">1.1.8.4.</strong> zhihuhot</a></li><li class="chapter-item "><a href="../../../2024/5/12/bilihot.html"><strong aria-hidden="true">1.1.8.5.</strong> bilihot</a></li><li class="chapter-item "><a href="../../../2024/5/12/toutiaohot.html"><strong aria-hidden="true">1.1.8.6.</strong> toutiaohot</a></li></ol></li><li class="chapter-item "><a href="../../../2024/5/13/SUMMARY.html"><strong aria-hidden="true">1.1.9.</strong> 13日</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../2024/5/13/baiduhot.html"><strong aria-hidden="true">1.1.9.1.</strong> baiduhot</a></li><li class="chapter-item "><a href="../../../2024/5/13/douyinhot.html"><strong aria-hidden="true">1.1.9.2.</strong> douyinhot</a></li><li class="chapter-item "><a href="../../../2024/5/13/weibohot.html"><strong aria-hidden="true">1.1.9.3.</strong> weibohot</a></li><li class="chapter-item "><a href="../../../2024/5/13/zhihuhot.html"><strong aria-hidden="true">1.1.9.4.</strong> zhihuhot</a></li><li class="chapter-item "><a href="../../../2024/5/13/bilihot.html"><strong aria-hidden="true">1.1.9.5.</strong> bilihot</a></li><li class="chapter-item "><a href="../../../2024/5/13/toutiaohot.html"><strong aria-hidden="true">1.1.9.6.</strong> toutiaohot</a></li></ol></li><li class="chapter-item "><a href="../../../2024/5/14/SUMMARY.html"><strong aria-hidden="true">1.1.10.</strong> 14日</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../2024/5/14/baiduhot.html"><strong aria-hidden="true">1.1.10.1.</strong> baiduhot</a></li><li class="chapter-item "><a href="../../../2024/5/14/douyinhot.html"><strong aria-hidden="true">1.1.10.2.</strong> douyinhot</a></li><li class="chapter-item "><a href="../../../2024/5/14/weibohot.html"><strong aria-hidden="true">1.1.10.3.</strong> weibohot</a></li><li class="chapter-item "><a href="../../../2024/5/14/zhihuhot.html"><strong aria-hidden="true">1.1.10.4.</strong> zhihuhot</a></li><li class="chapter-item "><a href="../../../2024/5/14/bilihot.html"><strong aria-hidden="true">1.1.10.5.</strong> bilihot</a></li><li class="chapter-item "><a href="../../../2024/5/14/toutiaohot.html"><strong aria-hidden="true">1.1.10.6.</strong> toutiaohot</a></li></ol></li><li class="chapter-item "><a href="../../../2024/5/15/SUMMARY.html"><strong aria-hidden="true">1.1.11.</strong> 15日</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../2024/5/15/baiduhot.html"><strong aria-hidden="true">1.1.11.1.</strong> baiduhot</a></li><li class="chapter-item "><a href="../../../2024/5/15/douyinhot.html"><strong aria-hidden="true">1.1.11.2.</strong> douyinhot</a></li><li class="chapter-item "><a href="../../../2024/5/15/weibohot.html"><strong aria-hidden="true">1.1.11.3.</strong> weibohot</a></li><li class="chapter-item "><a href="../../../2024/5/15/zhihuhot.html"><strong aria-hidden="true">1.1.11.4.</strong> zhihuhot</a></li><li class="chapter-item "><a href="../../../2024/5/15/bilihot.html"><strong aria-hidden="true">1.1.11.5.</strong> bilihot</a></li><li class="chapter-item "><a href="../../../2024/5/15/toutiaohot.html"><strong aria-hidden="true">1.1.11.6.</strong> toutiaohot</a></li></ol></li><li class="chapter-item "><a href="../../../2024/5/16/SUMMARY.html"><strong aria-hidden="true">1.1.12.</strong> 16日</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../2024/5/16/baiduhot.html"><strong aria-hidden="true">1.1.12.1.</strong> baiduhot</a></li><li class="chapter-item "><a href="../../../2024/5/16/douyinhot.html"><strong aria-hidden="true">1.1.12.2.</strong> douyinhot</a></li><li class="chapter-item "><a href="../../../2024/5/16/weibohot.html"><strong aria-hidden="true">1.1.12.3.</strong> weibohot</a></li><li class="chapter-item "><a href="../../../2024/5/16/zhihuhot.html"><strong aria-hidden="true">1.1.12.4.</strong> zhihuhot</a></li><li class="chapter-item "><a href="../../../2024/5/16/bilihot.html"><strong aria-hidden="true">1.1.12.5.</strong> bilihot</a></li><li class="chapter-item "><a href="../../../2024/5/16/toutiaohot.html"><strong aria-hidden="true">1.1.12.6.</strong> toutiaohot</a></li></ol></li><li class="chapter-item "><a href="../../../2024/5/17/SUMMARY.html"><strong aria-hidden="true">1.1.13.</strong> 17日</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../2024/5/17/baiduhot.html"><strong aria-hidden="true">1.1.13.1.</strong> baiduhot</a></li><li class="chapter-item "><a href="../../../2024/5/17/douyinhot.html"><strong aria-hidden="true">1.1.13.2.</strong> douyinhot</a></li><li class="chapter-item "><a href="../../../2024/5/17/weibohot.html"><strong aria-hidden="true">1.1.13.3.</strong> weibohot</a></li><li class="chapter-item "><a href="../../../2024/5/17/zhihuhot.html"><strong aria-hidden="true">1.1.13.4.</strong> zhihuhot</a></li><li class="chapter-item "><a href="../../../2024/5/17/bilihot.html"><strong aria-hidden="true">1.1.13.5.</strong> bilihot</a></li><li class="chapter-item "><a href="../../../2024/5/17/toutiaohot.html"><strong aria-hidden="true">1.1.13.6.</strong> toutiaohot</a></li></ol></li><li class="chapter-item "><a href="../../../2024/5/18/SUMMARY.html"><strong aria-hidden="true">1.1.14.</strong> 18日</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../2024/5/18/baiduhot.html"><strong aria-hidden="true">1.1.14.1.</strong> baiduhot</a></li><li class="chapter-item "><a href="../../../2024/5/18/douyinhot.html"><strong aria-hidden="true">1.1.14.2.</strong> douyinhot</a></li><li class="chapter-item "><a href="../../../2024/5/18/weibohot.html"><strong aria-hidden="true">1.1.14.3.</strong> weibohot</a></li><li class="chapter-item "><a href="../../../2024/5/18/zhihuhot.html"><strong aria-hidden="true">1.1.14.4.</strong> zhihuhot</a></li><li class="chapter-item "><a href="../../../2024/5/18/bilihot.html"><strong aria-hidden="true">1.1.14.5.</strong> bilihot</a></li><li class="chapter-item "><a href="../../../2024/5/18/toutiaohot.html"><strong aria-hidden="true">1.1.14.6.</strong> toutiaohot</a></li></ol></li><li class="chapter-item "><a href="../../../2024/5/19/SUMMARY.html"><strong aria-hidden="true">1.1.15.</strong> 19日</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../2024/5/19/baiduhot.html"><strong aria-hidden="true">1.1.15.1.</strong> baiduhot</a></li><li class="chapter-item "><a href="../../../2024/5/19/douyinhot.html"><strong aria-hidden="true">1.1.15.2.</strong> douyinhot</a></li><li class="chapter-item "><a href="../../../2024/5/19/weibohot.html"><strong aria-hidden="true">1.1.15.3.</strong> weibohot</a></li><li class="chapter-item "><a href="../../../2024/5/19/zhihuhot.html"><strong aria-hidden="true">1.1.15.4.</strong> zhihuhot</a></li><li class="chapter-item "><a href="../../../2024/5/19/bilihot.html"><strong aria-hidden="true">1.1.15.5.</strong> bilihot</a></li><li class="chapter-item "><a href="../../../2024/5/19/toutiaohot.html"><strong aria-hidden="true">1.1.15.6.</strong> toutiaohot</a></li></ol></li><li class="chapter-item expanded "><a href="../../../2024/5/20/SUMMARY.html"><strong aria-hidden="true">1.1.16.</strong> 20日</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../2024/5/20/baiduhot.html"><strong aria-hidden="true">1.1.16.1.</strong> baiduhot</a></li><li class="chapter-item "><a href="../../../2024/5/20/douyinhot.html"><strong aria-hidden="true">1.1.16.2.</strong> douyinhot</a></li><li class="chapter-item "><a href="../../../2024/5/20/weibohot.html"><strong aria-hidden="true">1.1.16.3.</strong> weibohot</a></li><li class="chapter-item "><a href="../../../2024/5/20/zhihuhot.html"><strong aria-hidden="true">1.1.16.4.</strong> zhihuhot</a></li><li class="chapter-item "><a href="../../../2024/5/20/bilihot.html"><strong aria-hidden="true">1.1.16.5.</strong> bilihot</a></li><li class="chapter-item expanded "><a href="../../../2024/5/20/toutiaohot.html" class="active"><strong aria-hidden="true">1.1.16.6.</strong> toutiaohot</a></li></ol></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Time Machine</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/jane-212/TimeMachine" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="伊朗总统遗体已被送往公墓"><a class="header" href="#伊朗总统遗体已被送往公墓"><a href="https://www.toutiao.com/trending/7370961399097262116">伊朗总统遗体已被送往公墓</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="赖清德就任台当局领导人-外交部回应"><a class="header" href="#赖清德就任台当局领导人-外交部回应"><a href="https://www.toutiao.com/trending/7370561023683592232">赖清德就任台当局领导人 外交部回应</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="背篓专线迎来温暖后续"><a class="header" href="#背篓专线迎来温暖后续"><a href="https://www.toutiao.com/trending/7369786251857186354">“背篓专线”迎来温暖后续</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="江西小学伤人案已致2死10伤"><a class="header" href="#江西小学伤人案已致2死10伤"><a href="https://www.toutiao.com/trending/7370987722137649189">江西小学伤人案已致2死10伤</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="胖猫姐姐多平台账号被封"><a class="header" href="#胖猫姐姐多平台账号被封"><a href="https://www.toutiao.com/trending/7370757413705613348">胖猫姐姐多平台账号被封</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="以官员称以色列与莱希遇难事故无关"><a class="header" href="#以官员称以色列与莱希遇难事故无关"><a href="https://www.toutiao.com/trending/7370842484345143334">以官员称以色列与莱希遇难事故无关</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="垃圾桶捡到的520礼物能否占为己有"><a class="header" href="#垃圾桶捡到的520礼物能否占为己有"><a href="https://www.toutiao.com/trending/7370671550002888741">垃圾桶捡到的520礼物能否占为己有</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="国台办就台湾地区领导人讲话表态"><a class="header" href="#国台办就台湾地区领导人讲话表态"><a href="https://www.toutiao.com/trending/7370992640080219675">国台办就台湾地区领导人讲话表态</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="伊朗官方宣布总统罹难现场一片哀泣"><a class="header" href="#伊朗官方宣布总统罹难现场一片哀泣"><a href="https://www.toutiao.com/trending/7370983840308789258">伊朗官方宣布总统罹难：现场一片哀泣</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="救护车闯红灯致2死责任如何划分"><a class="header" href="#救护车闯红灯致2死责任如何划分"><a href="https://www.toutiao.com/trending/7370877045984722955">救护车闯红灯致2死责任如何划分</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="汪峰承认新恋情-否认婚内出轨"><a class="header" href="#汪峰承认新恋情-否认婚内出轨"><a href="https://www.toutiao.com/trending/7370679396962992155">汪峰承认新恋情 否认婚内出轨</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="伊媒称伊朗总统直升机撞山坠毁"><a class="header" href="#伊媒称伊朗总统直升机撞山坠毁"><a href="https://www.toutiao.com/trending/7370777422188249139">伊媒称伊朗总统直升机撞山坠毁</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="连云港一景区辟谣工作人员沿街收秤"><a class="header" href="#连云港一景区辟谣工作人员沿街收秤"><a href="https://www.toutiao.com/trending/7369929906878221874">连云港一景区辟谣工作人员沿街收秤</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="郭有才520向女友苏畅求婚"><a class="header" href="#郭有才520向女友苏畅求婚"><a href="https://www.toutiao.com/trending/7370530458930528275">郭有才520向女友苏畅求婚</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="美前军官称莱希坠机与美制裁有关联"><a class="header" href="#美前军官称莱希坠机与美制裁有关联"><a href="https://www.toutiao.com/trending/7370585477763563535">美前军官称莱希坠机与美制裁有关联</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="汪峰新女友曾参加非诚勿扰"><a class="header" href="#汪峰新女友曾参加非诚勿扰"><a href="https://www.toutiao.com/trending/7370887948398657577">汪峰新女友曾参加《非诚勿扰》</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="曝涂磊私生活混乱网友道歉"><a class="header" href="#曝涂磊私生活混乱网友道歉"><a href="https://www.toutiao.com/trending/7370470604568264714">曝涂磊私生活混乱网友道歉</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="伊朗将宣布总统等遇难人员葬礼安排"><a class="header" href="#伊朗将宣布总统等遇难人员葬礼安排"><a href="https://www.toutiao.com/trending/7370937995668488192">伊朗将宣布总统等遇难人员葬礼安排</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="杨鸣今晚我们要尽量少犯错"><a class="header" href="#杨鸣今晚我们要尽量少犯错"><a href="https://www.toutiao.com/trending/7370821148038135834">杨鸣：今晚我们要尽量少犯错</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="江苏省政协副主席王昊被查"><a class="header" href="#江苏省政协副主席王昊被查"><a href="https://www.toutiao.com/trending/7370648392646524979">江苏省政协副主席王昊被查</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="罹难的伊朗总统系北大名誉教授"><a class="header" href="#罹难的伊朗总统系北大名誉教授"><a href="https://www.toutiao.com/trending/7370747327205605413">罹难的伊朗总统系北大名誉教授</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="首饰金价突破742元每克"><a class="header" href="#首饰金价突破742元每克"><a href="https://www.toutiao.com/trending/7370917846487924770">首饰金价突破742元每克</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="a股放量上涨两市成交9954亿元"><a class="header" href="#a股放量上涨两市成交9954亿元"><a href="https://www.toutiao.com/trending/7370931634226659368">A股放量上涨：两市成交9954亿元</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="伊朗总统莱希是谁"><a class="header" href="#伊朗总统莱希是谁"><a href="https://www.toutiao.com/trending/7369917515864034826">伊朗总统莱希是谁</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="北京市纪委监委通报3人被查"><a class="header" href="#北京市纪委监委通报3人被查"><a href="https://www.toutiao.com/trending/7370970720534265906">北京市纪委监委通报：3人被查</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="庆余年2被吐槽五步一广告"><a class="header" href="#庆余年2被吐槽五步一广告"><a href="https://www.toutiao.com/trending/7370232324182507531">《庆余年2》被吐槽“五步一广告”</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="美方否认伊朗飞机事故中有谋杀行为"><a class="header" href="#美方否认伊朗飞机事故中有谋杀行为"><a href="https://www.toutiao.com/trending/7370942754693582387">美方否认伊朗飞机事故中有谋杀行为</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="胖猫事件凸显部分年轻人婚恋观错位"><a class="header" href="#胖猫事件凸显部分年轻人婚恋观错位"><a href="https://www.toutiao.com/trending/7370555744418005032">胖猫事件凸显部分年轻人婚恋观错位</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="南京阿姨手冲咖啡爆火却遭逃单"><a class="header" href="#南京阿姨手冲咖啡爆火却遭逃单"><a href="https://www.toutiao.com/trending/7370693216405815346">南京阿姨手冲咖啡爆火却遭逃单</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="伊朗第一副总统将承担总统权力职能"><a class="header" href="#伊朗第一副总统将承担总统权力职能"><a href="https://www.toutiao.com/trending/7370952868326539318">伊朗第一副总统将承担总统权力职能</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="799克黄金被制成挎包链条入境被查"><a class="header" href="#799克黄金被制成挎包链条入境被查"><a href="https://www.toutiao.com/trending/7370882858384097290">799克黄金被制成挎包链条入境被查</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="博主再返连云港买3家有2家未少秤"><a class="header" href="#博主再返连云港买3家有2家未少秤"><a href="https://www.toutiao.com/trending/7370968723231866907">博主再返连云港：买3家有2家未少秤</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="遇难的伊朗外长上月曾提及伊核谈判"><a class="header" href="#遇难的伊朗外长上月曾提及伊核谈判"><a href="https://www.toutiao.com/trending/7370957126937935923">遇难的伊朗外长上月曾提及伊核谈判</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="黎真主党用无人机重创以军侦察飞艇"><a class="header" href="#黎真主党用无人机重创以军侦察飞艇"><a href="https://www.toutiao.com/trending/7370698967786455092">黎真主党用无人机重创以军侦察飞艇</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="奥迪车主别停他车砸烂车窗被抓获"><a class="header" href="#奥迪车主别停他车砸烂车窗被抓获"><a href="https://www.toutiao.com/trending/7370321350709542950">奥迪车主别停他车砸烂车窗被抓获</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="哈梅内伊宣布伊朗将公共哀悼5天"><a class="header" href="#哈梅内伊宣布伊朗将公共哀悼5天"><a href="https://www.toutiao.com/trending/7370998982803197477">哈梅内伊宣布伊朗将公共哀悼5天</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="老人摔倒到底扶不扶"><a class="header" href="#老人摔倒到底扶不扶"><a href="https://www.toutiao.com/trending/7370452662946365474">老人摔倒到底扶不扶</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="520又要开始蹲点捡花了"><a class="header" href="#520又要开始蹲点捡花了"><a href="https://www.toutiao.com/trending/7370245625336004617">520又要开始蹲点捡花了</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="莫迪称对伊朗总统遇难深感悲痛震惊"><a class="header" href="#莫迪称对伊朗总统遇难深感悲痛震惊"><a href="https://www.toutiao.com/trending/7370769703826325519">莫迪称对伊朗总统遇难深感悲痛震惊</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="西门子能源ceo最不愿提撤出中国"><a class="header" href="#西门子能源ceo最不愿提撤出中国"><a href="https://www.toutiao.com/trending/7370745028479877154">西门子能源CEO：最不愿提撤出中国</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="马龙退出wtt重庆冠军赛-林高远递补"><a class="header" href="#马龙退出wtt重庆冠军赛-林高远递补"><a href="https://www.toutiao.com/trending/7370950578358190107">马龙退出WTT重庆冠军赛 林高远递补</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="悼念伊朗总统-巴基斯坦将降半旗致哀"><a class="header" href="#悼念伊朗总统-巴基斯坦将降半旗致哀"><a href="https://www.toutiao.com/trending/7370962040334549019">悼念伊朗总统 巴基斯坦将降半旗致哀</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="专家十年以后房子白菜价纯属胡扯"><a class="header" href="#专家十年以后房子白菜价纯属胡扯"><a href="https://www.toutiao.com/trending/7370360908478382091">专家：十年以后房子白菜价纯属胡扯</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="3名大学生爬长城遭雷电击中"><a class="header" href="#3名大学生爬长城遭雷电击中"><a href="https://www.toutiao.com/trending/7370926126954512394">3名大学生爬长城遭雷电击中</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="伊朗总统遇难对地区局势有何影响"><a class="header" href="#伊朗总统遇难对地区局势有何影响"><a href="https://www.toutiao.com/trending/7370879043836575744">伊朗总统遇难对地区局势有何影响</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="费翔回应母亲去世"><a class="header" href="#费翔回应母亲去世"><a href="https://www.toutiao.com/trending/7370571651705995304">费翔回应母亲去世</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="南京化纤上演天地板-公司回应"><a class="header" href="#南京化纤上演天地板-公司回应"><a href="https://www.toutiao.com/trending/7370967558066962466">南京化纤上演“天地板” 公司回应</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="伊朗政府内阁将继续莱希的道路"><a class="header" href="#伊朗政府内阁将继续莱希的道路"><a href="https://www.toutiao.com/trending/7370967386339737650">伊朗政府内阁：将继续莱希的道路</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="爷爷抱着宝宝好好的-爸爸一抱就哭"><a class="header" href="#爷爷抱着宝宝好好的-爸爸一抱就哭"><a href="https://www.toutiao.com/trending/7370883462188204059">爷爷抱着宝宝好好的 爸爸一抱就哭</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+<h2 id="韩国瑜被多名民进党女民代围堵"><a class="header" href="#韩国瑜被多名民进党女民代围堵"><a href="https://www.toutiao.com/trending/7370474377780920355">韩国瑜被多名民进党女民代围堵</a></a></h2>
+<p>2024-05-20 09:10:52</p>
+<hr />
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../2024/5/20/bilihot.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../2024/5/20/bilihot.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr.min.js"></script>
+        <script src="../../../mark.min.js"></script>
+        <script src="../../../searcher.js"></script>
+
+        <script src="../../../clipboard.min.js"></script>
+        <script src="../../../highlight.js"></script>
+        <script src="../../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
