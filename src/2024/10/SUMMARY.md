@@ -1,1 +1,2 @@
 - [1日](1/SUMMARY.md)
+- [2日](2/SUMMARY.md)
